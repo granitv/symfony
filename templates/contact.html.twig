@@ -1,0 +1,14 @@
+{%  extends'base.html.twig' %}
+{% block body %}
+    <div class="row justify-content-center">
+        <form method="post" class="col-md-6">
+            <label>Name:</label>
+            <input class="form-control" type="text" placeholder="Name" name="name">
+            <label>Email:</label>
+            <input class="form-control" type="email" placeholder="Email" name="email">
+            <label>Message:</label>
+            <textarea  class="form-control" placeholder="Message:" name="message"></textarea>
+            <input type="submit" value="Send" class="mt-2 btn btn-success col-md-12">
+        </form>
+    </div>
+{% endblock %}

@@ -1,3 +1,19 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+home:
+    path: /
+    controller: App\Controller\DefaultController::indexAction
+
+about:
+    path: /about
+    controller: App\Controller\DefaultController::aboutAction
+
+contact:
+    path: /contact
+    controller: App\Controller\DefaultController::contactAction
+
+route_name:
+    path: /name/{name}
+    controller: App\Controller\DefaultController::nameAction
+
+one_user:
+    path: /id/{id}
+    controller: App\Controller\DefaultController::oneUserAction

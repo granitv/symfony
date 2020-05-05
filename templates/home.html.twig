@@ -1,19 +1,27 @@
 {% extends 'base.html.twig'%}
 
 {% block body %}
-
-
-    <ul>
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">View Details</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for person in persons %}
-            <li>Name: {{ person.name }} | Age {{ person.age}} </li>
+            <tr>
+                <th scope="row">{{ person.id }}</th>
+                <td>{{ person.name }}</td>
+                <td>{{ person.gender}} </td>
+                <td><a class="btn btn-success" href="{{ path('one_user', {id : person.id }) }}">Details</a></td>
+            </tr>
         {% endfor %}
-    </ul>
+        </tbody>
+    </table>
 
-    {% if name == 'Granit' %}
-        <h3>Ton accent est chantant</h3>
-    {% endif %}
 {% endblock  %}
 
-{%  block footer %}
-<h2>ça,c'est le footer de ma page</h2>
-{%  endblock %}
+{%  block footer %} {%  endblock %}

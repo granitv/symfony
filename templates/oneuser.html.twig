@@ -1,0 +1,30 @@
+{%  extends'base.html.twig' %}
+{% block body %}
+
+<div class="row justify-content-center my-2">
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+           Name: {{ oneuser.name }}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Id: {{ oneuser.id }}</li>
+            <li class="list-group-item">Age: {{ oneuser.age}}</li>
+            <li class="list-group-item">Gender: {{ oneuser.gender}}</li>
+            <li class="list-group-item">Job: {{ oneuser.job.name}}</li>
+        </ul>
+    </div>
+<form method="post" class="ml-2">
+    <label>Name:</label>
+    <input class="form-control" type="text" name="name" placeholder="name" value="{{ oneuser.name }}">
+    <label>Age:</label>
+    <input class="form-control" type="number" name="age" placeholder="age" value="{{ oneuser.age}}">
+    <label>Gender:</label>
+    <select class="form-control" name="gender">
+        <option value="F" {{  oneuser.gender == 'F' ? 'selected' }}>F</option>
+        <option value="M" {{  oneuser.gender == 'M' ? 'selected' }}>M</option>
+    </select>
+    <input type="button" class="btn btn-success my-2" value="Edit">
+</form>
+</div>
+
+{% endblock %}
