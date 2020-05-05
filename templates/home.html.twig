@@ -1,0 +1,19 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+
+    <ul>
+        {% for person in persons %}
+            <li>Name: {{ person.name }} | Age {{ person.age}} </li>
+        {% endfor %}
+    </ul>
+
+    {% if name == 'Granit' %}
+        <h3>Ton accent est chantant</h3>
+    {% endif %}
+{% endblock  %}
+
+{%  block footer %}
+<h2>ça,c'est le footer de ma page</h2>
+{%  endblock %}
