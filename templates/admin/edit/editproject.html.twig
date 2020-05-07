@@ -7,10 +7,11 @@
         <ul class="border">
             <li>Name: {{ projects.name }} </li>
             <li>Description: {{ projects.description }} </li>
-            <li><img src="{{ projects.image }}" width="150px" alt="">  </li>
+            <li><img src="{{ asset('uploads/images/'~projects.image ) }}" width="150px" alt="">  </li>
             <li>Skill: {% for s in projects.skill %}
                     {{ s.name }}
-                {% endfor %}</li>
+                {% endfor %}
+            </li>
         </ul>
     {{ form(projectForm) }}
 {% endblock %}

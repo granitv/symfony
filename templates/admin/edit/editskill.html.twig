@@ -7,7 +7,7 @@
         <ul class="border">
             <li>Name: {{ skill.name }} </li>
             <li>Description: {{ skill.description }}</li>
-            <li><img src="{{ skill.image }}" width="50px" alt=""></li>
+            <li><img src="{{ asset('uploads/images/'~skill.image ) }}" width="50px" alt=""></li>
             <li>Projects: {% for p in skill.projects %}
                     {{ p.name }}
                 {% endfor %}</li>

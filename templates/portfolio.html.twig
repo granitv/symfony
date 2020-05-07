@@ -18,8 +18,8 @@
                 <th scope="row">{{ skill.id }}</th>
                 <td>{{ skill.name }}</td>
                 <td>{{ skill.description }} </td>
-                <td><img src="{{ skill.image }} " width="50px"></td>
-                <td>{{ skill.techno.name }} <img src="{{ skill.techno.image }} " width="50px"> : {{ skill.techno.category.name }} </td>
+                <td><img src="{{ asset('uploads/images/'~skill.image ) }}" width="50px"></td>
+                <td>{{ skill.techno.name }} <img src="{{ asset('uploads/images/'~skill.techno.image ) }}" width="50px"> : {{ skill.techno.category.name }} </td>
             </tr>
         {% endfor %}
         </tbody>
@@ -43,7 +43,7 @@
                 <th scope="row">{{ project.id }}</th>
                 <td>{{ project.name }}</td>
                 <td>{{ project.description }} </td>
-                <td><img src="{{ project.image }} " width="50px"></td>
+                <td><img src="{{ asset('uploads/images/'~project.image ) }}" width="50px"></td>
                 <td> {% for skill in project.skill %}
                         {{ skill.name }},
                     {% endfor %}

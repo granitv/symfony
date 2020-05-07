@@ -7,16 +7,16 @@
 
     {% for tech in technos %}
         <ul class="border py-2" >
-            <li>Name: {{ tech.name }} <img src="{{ tech.image }}" width="150px" alt=""> </li>
+            <li>Name: {{ tech.name }} <img src="{{ asset('uploads/images/'~tech.image ) }}" width="150px" alt=""> </li>
             <li>Category: {{ tech.category.name }}     </li>
             <li><a class="btn-info btn-sm" href="{{ path('edittech',{ id : tech.id }) }}">Update</a>
                 <a onclick='return confirm("Are you sure you wanna delete tihs techno?")'
                    class="ml-4 btn-danger btn-sm " href="{{ path('delete',{ repository: 'Techno',id : tech.id,redirect: 'tech' }) }}">Delete</a></li>
-
         </ul>
     {% endfor %}
 
     {{ form(techForm) }}
+
     </div>
 </div>
 {% endblock %}

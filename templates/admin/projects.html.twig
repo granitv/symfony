@@ -9,7 +9,7 @@
         <ul class="border py-2">
             <li>Name: {{ pro.name }} </li>
             <li>Description: {{ pro.description }} </li>
-            <li><img src="{{ pro.image }}" width="150px" alt="">  </li>
+            <li><img src="{{ asset('uploads/images/'~pro.image ) }}" width="150px" alt="">  </li>
             <li>Skill: {% for s in pro.skill %}
                     {{ s.name }}
                 {% endfor %}</li>

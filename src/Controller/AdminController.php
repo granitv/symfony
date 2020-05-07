@@ -13,6 +13,7 @@ use App\Repository\PersonRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\SkillRepository;
 use App\Repository\TechnoRepository;
+use App\Service\FormsManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -70,6 +71,19 @@ class AdminController extends AbstractController
             $project = $form->getData();
             $manager = $this->getDoctrine()->getManager();
             // $manager->getRepository(Skill::class);
+            if($type == 'Techno' || $type == 'Skill' || $type == 'Project'){
+                $skill = $form->getData();
+                $file = $form->get('image')->getData();
+
+                if($file){
+                    /* $newFileName = FormsManager::handleFileUpload($file, 'uploads');
+                    $skill->setImage('../uploads/'.$newFileName); */
+                    //                                                  $this->getParameter('uploads'));
+                    $newFileName = FormsManager::handleFileUpload($file, $this->getParameter('uploads'));
+                    $skill->setImage($newFileName);
+                }
+
+            }
             $manager->persist($project);
             $manager->flush();
             return true;
