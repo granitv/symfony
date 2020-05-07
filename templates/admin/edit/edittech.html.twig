@@ -1,0 +1,18 @@
+{% extends 'admin/edit/baseedit.html.twig' %}
+
+{% block body %}
+    <h4>Techno</h4>
+
+        <ul class="border">
+            <li>Name: {{ technos.name }} </li>
+            <li><img src="{{ technos.image }}" width="150px" alt=""> </li>
+            <li>Category:
+                {% for cat in  technos.category  %}
+                    {{ cat.name }}
+                {% endfor %}
+            </li>
+        </ul>
+
+
+    {{ form(techForm) }}
+{% endblock %}

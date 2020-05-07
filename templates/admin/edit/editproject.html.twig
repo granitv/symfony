@@ -1,0 +1,16 @@
+{% extends 'admin/edit/baseedit.html.twig' %}
+
+{% block body %}
+    <h4>Projects</h4>
+
+
+        <ul class="border">
+            <li>Name: {{ projects.name }} </li>
+            <li>Description: {{ projects.description }} </li>
+            <li><img src="{{ projects.image }}" width="150px" alt="">  </li>
+            <li>Skill: {% for s in projects.skill %}
+                    {{ s.name }}
+                {% endfor %}</li>
+        </ul>
+    {{ form(projectForm) }}
+{% endblock %}

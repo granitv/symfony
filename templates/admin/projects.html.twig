@@ -1,0 +1,26 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <h4>Projects</h4>
+
+    {% for pro in projects %}
+        <ul class="border py-2">
+            <li>Name: {{ pro.name }} </li>
+            <li>Description: {{ pro.description }} </li>
+            <li><img src="{{ pro.image }}" width="150px" alt="">  </li>
+            <li>Skill: {% for s in pro.skill %}
+                    {{ s.name }}
+                {% endfor %}</li>
+            <li><a class="btn-info btn-sm " href="{{ path('editproject',{ id : pro.id }) }}">Update</a>
+                <a onclick='return confirm("Are you sure you wanna delete tihs project?")'
+                   class="ml-4 btn-danger btn-sm " href="{{ path('delete',{ repository: 'Project',id : pro.id,redirect: 'projects' }) }}">Delete</a></li>
+
+        </ul>
+    {% endfor %}
+
+    {{ form(projectForm) }}
+    </div>
+</div>
+{% endblock %}

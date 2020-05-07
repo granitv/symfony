@@ -2,18 +2,42 @@ home:
     path: /
     controller: App\Controller\DefaultController::indexAction
 
-about:
-    path: /about
-    controller: App\Controller\DefaultController::aboutAction
+admin:
+    path: /admin/
+    controller: App\Controller\AdminController::indexAction
 
-contact:
-    path: /contact
-    controller: App\Controller\DefaultController::contactAction
+cat:
+    path: /admin/cat
+    controller: App\Controller\AdminController::catAction
 
-route_name:
-    path: /name/{name}
-    controller: App\Controller\DefaultController::nameAction
+editcat:
+    path: /admin/editcat/{id}/update
+    controller: App\Controller\EditAdmin::catAction
 
-one_user:
-    path: /id/{id}
-    controller: App\Controller\DefaultController::oneUserAction
+tech:
+    path: /admin/tech
+    controller: App\Controller\AdminController::techAction
+
+edittech:
+    path: /admin/edittech/{id}/update
+    controller: App\Controller\EditAdmin::techAction
+
+skills:
+    path: /admin/skills
+    controller: App\Controller\AdminController::skillsAction
+
+editskill:
+    path: /admin/editskill/{id}/update
+    controller: App\Controller\EditAdmin::skillsAction
+
+projects:
+    path: /admin/projects
+    controller: App\Controller\AdminController::projectsAction
+
+editproject:
+    path: /admin/editproject/{id}/update
+    controller: App\Controller\EditAdmin::projectsAction
+
+delete:
+    path: /admin/delete/{repository}/{id}/{redirect}
+    controller: App\Controller\EditAdmin::delete

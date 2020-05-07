@@ -1,22 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{ path('home') }}">Granit</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item  {{ app.request.pathInfo == '/'  ? 'active' }}">
-                <a class="nav-link" href="{{ path('home') }}">Home</a>
-            </li>
-            <li class="nav-item {{ 'about' in app.request.pathInfo ? 'active' }}">
-                <a class="nav-link" href="{{ path('about') }}">About</a>
-            </li>
-            <li class="nav-item {{ 'contact' in app.request.pathInfo ? 'active' }}">
-                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
-            </li>
-            <li class="nav-item {{ 'Rita' in app.request.pathInfo ? 'active' }}">
-                <a class="nav-link" href="{{ path('route_name', {name : 'Rita' }) }}">Rita</a>
-            </li>
-        </ul>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link {{  app.request.pathInfo == '/' ? 'active' : '' }}" href="{{ path('home') }}">Home</a>
+            <a class="nav-item nav-link" href="{{ path('admin') }}">Admin</a>
+
+        </div>
     </div>
 </nav>

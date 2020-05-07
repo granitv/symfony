@@ -1,0 +1,25 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <h4>Skills</h4>
+
+    {% for skill in skills %}
+        <ul class="border py-2">
+            <li>Name: {{ skill.name }} </li>
+            <li>Description: {{ skill.description }}</li>
+            <li><img src="{{ skill.image }}" width="50px" alt=""></li>
+            <li>Projects: {% for p in skill.projects %}
+                    {{ p.name }}
+                {% endfor %}</li>
+            <li><a class="btn-info btn-sm" href="{{ path('editskill',{ id : skill.id }) }}">Update</a>
+                <a onclick='return confirm("Are you sure you wanna delete tihs skill?")'
+                   class="ml-4 btn-danger btn-sm " href="{{ path('delete',{ repository: 'Skill',id : skill.id,redirect: 'skills' }) }}">Delete</a></li></li>
+        </ul>
+    {% endfor %}
+
+    {{ form(skillForm) }}
+    </div>
+</div>
+{% endblock %}

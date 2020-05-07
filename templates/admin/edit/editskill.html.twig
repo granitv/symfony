@@ -1,0 +1,18 @@
+{% extends 'admin/edit/baseedit.html.twig' %}
+
+{% block body %}
+    <h4>Skills</h4>
+
+    {% for skill in skills %}
+        <ul class="border">
+            <li>Name: {{ skill.name }} </li>
+            <li>Description: {{ skill.description }}</li>
+            <li><img src="{{ skill.image }}" width="50px" alt=""></li>
+            <li>Projects: {% for p in skill.projects %}
+                    {{ p.name }}
+                {% endfor %}</li>
+        </ul>
+    {% endfor %}
+
+    {{ form(skillForm) }}
+{% endblock %}
